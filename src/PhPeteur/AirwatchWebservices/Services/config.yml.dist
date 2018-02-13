@@ -1,0 +1,117 @@
+#
+#COPY THIS FILE WITH A YML extention
+#
+#below creds and instance information
+
+instance_base_uri: 'https://cnXYZ.awmdm.com'
+instance_fqdn: 'cnXYZ.awmdm.com'
+aw-tenant-code: 'yourtenantcode'
+username: 'username'
+password: 'userpassword'
+apikey: 'your api key'
+
+#-- end of modification peace
+
+###
+# Well you can modify the below at your own "risk"
+###
+
+#$console.php system-users --get-enrollment-users
+default_user_fields_to_show: ['UserName','FirstName','LastName','Status','Email','LocationGroupId','Role','EnrolledDevicesCount','Id']
+
+#$console.php mam-app-search
+default_app_fields_to_show: ['Id','AppType','ApplicationName','BundleId','Platform','AssignmentStatus','Status','ApplicationSize']
+
+#$console.php mdm-devices-search
+default_device_fields_to_show: ['Id', 'SerialNumber','Imei','EasId','Ownership','Platform','LastSeen','EnrollmentStatus','ComplianceStatus']
+
+#$console.php mdm-smartgroups-search
+default_smartgroup_fields_to_show: ['Name','Devices','Assignments','SmartGroupID','ManagedByOrganizationGroupName']
+##[We rely on the above] default_mdmsmartgroupdetails_fields_to_show: ['Name','Devices','Assignments','SmartGroupID','ManagedByOrganizationGroupName']
+#$console.php mdm-products-search
+
+#$default_admin_fields_to_show
+#new format to apply to others 'type'=>'entries'
+##Kind of refactor but doesn't suits our needs to complexe in term of treatment and field placement !
+#default_admin_fields_to_show: { 'string': ['Id','UserName','FirstName','LastName','Email','LocationGroup','LocationGroupId','OrganizationGroupUuid','TimeZone','Locale','InitialLandingPage'], 'numeric': ['LastLoginTimeStamp','MessageTemplateId'],'bool':['IsActiveDirectoryUser','RequiresPasswordChange'] }
+#admin_fields_to_show_map_roles =
+#map_roles_array: ''
+default_admin_fields_to_show: ['Id','UserName','FirstName','LastName','Email','LastLoginTimeStamp','IsActiveDirectoryUser']
+default_appgroup_fields_to_show: ['ApplicationGroupID','Name','Platform','AppGroupType','Description','ManagedByOrganizationGroupID','OrganizationGroups','UserGroups','DeviceOwnership','IsActive']
+default_systemgroup_fields_to_show: ['Name','GroupId','LocationGroupType','CreatedOn','Users','Admins','Devices','Id']
+default_appremovallogs_fields_to_show: ['CreatedOn','ModifiedOn','Identifier','Source','ThresholdStatus','ThresholdId','Links','Id']
+default_deviceapps_fields_to_show: ['Id','ApplicationName','Version','BuildVersion','Status','Size','ApplicationIdentifier','Type','IsManaged','Deviceid']
+default_devicecompliancedetails_fields_to_show: ['CompliantStatus','PolicyName','PolicyDetail','LastComplianceCheck','NextComplianceCheck','ActionTaken','Id']
+default_complianceattr_fields_to_show: ['FriendlyName','Key','OperatorTypes','Values']
+default_deviceeventlog_fields_to_show: ['Id','EventDataList','Severity','TimeStamp','Source','Event','AdminAccount']
+default_devicegps_fields_to_show: ['Id','DeviceId','SampleTime','Latitude','Longitude','Elevation','Speed']
+default_product_fields_to_show: ['ID','Name','ManagedByOrganizationGroupName','Active','Platform','TotalAssigned','Compliant','InProgress','Failed','PauseResume','DevicePolicyTypeID','DevicePolicyType']
+default_devicesmartgroups_fields_to_show: ['SmartGroupId','SmartGroupName']
+default_devicesecurity_fields_to_show: ['IsCompromised','DataProtectionEnabled','BlockLevelEncryption','FileLevelEncryption','IsPasscodePresent','IsPasscodeCompliant','PasscodeLockGracePeriod','PasscodeLockGracePeriodEnforced']
+default_deviceenrolleddevicescount_to_show: ['DevicesCount']
+default_deviceuser_fields_to_show: ['Id','UserName','Status','Email','SecurityType', 'ContactNumber','MessageType','EmailUserName','Group', 'Role','EnrolledDevicesCount']
+default_deviceprofiles_fields_to_show: ['Id','Status','Name','Description','LocationGroupId','CurrentVersion','AssignmentType']
+default_devicenetwork_fields_to_show: ['PhoneNumber','RoamingStatus','DataRoamingEnabled','VoiceRoamingEnabled','IPAddress','CellularNetworkInfo','WifiInfo']
+default_systemrole_fields_to_show: ['Id','Name','Description','LocationGroup','LocationGroupId','IsActive','UserLinkId']
+default_deviceadminapp_fields_to_show: ['Identifier','Name','Version']
+default_devicebulksettings_fields_to_show: ['SendMessage','EnterpriseWipe','GPS','LockDevice']
+default_devicecertificate_fields_to_show: ['Id','FirstSampleTime','LastSampleTime','DeviceId','Name','ExpiresOn','IssuedBy','Status']
+default_devicenotes_fields_to_show: ['Id','DeviceId','TagId','Note','CreatedOn','ModifiedOn']
+default_deviceextensive_fields_to_show: ['DeviceId','SerialNumber','DeviceFriendlyName','OrganizationGroupId','UserName','LastSeen','EnrollmentDate','Compliant','AssetNumber','EnrollmentStatus','UnEnrolledDate']
+##default_deviceextensivelite_fields_to_show: ['DeviceId','SerialNumber','DeviceFriendlyName','OrganizationGroupId','UserName','LastSeen','EnrollmentDate','Compliant','AssetNumber','EnrollmentStatus','UnEnrolledDate']
+default_devicelite_fields_to_show: ['DeviceId','DeviceFriendlyName','OrganizationGroupId','LastSeen', 'DeviceNetworkInfo','CustomAttributes']
+#default_devicesecurityinfos_fields_to_show: []
+default_devicesecurityinfos_fields_to_show: ['DeviceId','CompromisedStatus','EncryptionStatus','PasscodeStatus','PasscodeComplianceStatus','PasscodeLockGracePeriod','PasscodeLockGracePeriodEnforced']
+default_devicenetworkinfos_fields_to_show: ['Id','IPAddress']
+default_devicecompliancepolicy_fields_to_show: ['AssignedDevices','CompliantDevices','Description','DevicePolicyId','IsActive','Name','NonCompliantDevices','Platform','RootLocationGroupId','RootLocationGroupName']
+default_devicecustoattr_fields_to_show: ['DeviceId','Udid','SerialNumber','EnrollmentUserName','AssetNumber','CustomAttributes']
+default_devicecustoattrchange_fields_to_show: ['DeviceID','FriendlyName','CustomAttributesChanges']
+default_systemusersenrolleddevice_fields_to_show: ['DeviceID','SerialNumber','AssetNumber','FriendlyName','UserName','EnrolledDate','RegistrationDate','LastSeen','Platform','CustomAttributes']
+default_mdmproductfailed_fields_to_show: ['DeviceId','Name','LastJobStatus']
+default_mdmproductassigned_fields_to_show: ['DeviceId','Name','LastJobStatus','LastSeen']
+
+##default_systemgroupchildren: ['Name','Id']
+#below is to ease your life if you wan't to change default fields..
+possible_app_fields_to_show: ['Type','AppType','ApplicationName','AppVersion', 'ActualVersion','BundleId', 'Status','Platform','SupportedModels','AssignmentStatus','ApplicationSize','CategoryList','SmartGroups','IsReimbursable','ApplicationSource','LocationGroupId','LargeIconUri','MediumIconUri','SmallIconUri','PushMode','AppRank','AssignedDeviceCount','InstalledDeviceCount','NotInstalledDeviceCount','AutoUpdateVersion','EnableProvisioning','IsPendencyFile','ContentGatewayId']
+#possible_app_fields_to_show: ['Id','AppType','ApplicationName','BundleId','Platform','AssignmentStatus','Status','ApplicationSize']
+
+possible_user_fields_to_show: ['UserName','FirstName','LastName','Status','Email','SecurityType', 'ContactNumber','MobileNumber','MessageType','EmailUserName','Group','LocationGroupId', 'OrganizationGroupUuid','Role','EnrolledDevicesCount','CustomAttribute1','CustomAttribute2', 'CustomAttribute3','CustomAttribute4','CustomAttribute5','ExternalId','Id','Uuid']
+possible_device_fields_to_show: ['Id','Udid','SerialNumber','MacAddress','Imei','EasId','AssetNumber','DeviceFriendlyName','LocationGroupId','LocationGroupName','UserId','UserName','UserEmailAddress','Ownership','PlatformId','Platform','ModelId','Model','OperatingSystem','PhoneNumber','LastSeen','EnrollmentStatus','ComplianceStatus','CompromisedStatus','LastEnrolledOn','LastComplianceCheckOn','LastCompromisedCheckOn','IsSupervised','DeviceMCC','VirtualMemory','IsDeviceDNDEnabled','IsDeviceLocatorEnabled','IsCloudBackupEnabled','IsActivationLockEnabled','IsNetworkTethered','IsRoaming']
+possible_smartgroup_fields_to_show: ['Devices','Assignments','Exclusions','Name','SmartGroupID','SmartGroupUuid','ManagedByOrganizationGroupId','ManagedByOrganizationGroupUuid','ManagedByOrganizationGroupName']
+possible_product_fields_to_show: ['ID','PlatformID','Name','ManagedByOrganizationGroupID','ManagedByOrganizationGroupName','Active','Platform','SmartGroups','TotalAssigned','Compliant','InProgress','Failed','PauseResume','DevicePolicyTypeID','DevicePolicyType','ActivationOrDeactivationType']
+#possible_admin_fields_to_show: { 'string': ['UserName','FirstName','LastName','Email','LocationGroup','LocationGroupId','OrganizationGroupUuid','TimeZone','Locale','InitialLandingPage'], 'numeric': ['LastLoginTimeStamp','MessageTemplateId'],'array': ['Roles', 'Id'],'bool':['IsActiveDirectoryUser','RequiresPasswordChange'] }
+possible_admin_fields_to_show: ['Id','UserName','FirstName','LastName','Email','LocationGroup','LocationGroupId','OrganizationGroupUuid','TimeZone','Locale','InitialLandingPage','LastLoginTimeStamp','MessageTemplateId','Roles', 'Id','IsActiveDirectoryUser','RequiresPasswordChange']
+possible_appgroup_fields_to_show: ['ApplicationGroupID','Name','Platform','AppGroupType','Description','ManagedByOrganizationGroupID','OrganizationGroups','UserGroups','DeviceOwnership','IsActive','AppCount','Applications']
+possible_systemgroup_fields_to_show: ['Name','GroupId','LocationGroupType','Country','Locale','CreatedOn','LgLevel','Users','Admins','Devices','Id']
+possible_appremovallogs_fields_to_show: ['CreatedOn','ModifiedOn','Identifier','Source','ThresholdStatus','ThresholdId','Links','Id','TotalResults']
+possible_deviceapps_fields_to_show: ['Id','ApplicationName','Version','BuildVersion','Status','Size','ApplicationIdentifier','Type','IsManaged','Deviceid']
+possible_devicecompliancedetails_fields_to_show: ['CompliantStatus','PolicyName','PolicyDetail','LastComplianceCheck','NextComplianceCheck','ActionTaken','Id']
+possible_complianceattr_fields_to_show: ['FriendlyName','Key','OperatorTypes','Values']
+possible_deviceeventlog_fields_to_show: ['Id','EventDataList','Severity','TimeStamp','Source','Event','AdminAccount']
+possible_devicegps_fields_to_show : ['Id','DeviceId','SampleTime','Latitude','Longitude','Elevation','Speed']
+possible_mdmsmartgroupdetails_fields_to_show: ['Devices','Assignments','Exclusions','Name','SmartGroupID','SmartGroupUuid','ManagedByOrganizationGroupId','ManagedByOrganizationGroupUuid','ManagedByOrganizationGroupName','OrganizationGroups','UserGroups','Tags','Ownerships','Platforms','Models','OperationSystems','UserAdditions','DeviceAdditions','UserExclusions', 'DeviceExclisons']
+possible_devicesmartgroups_fields_to_show: ['SmartGroupId','SmartGroupName']
+possible_devicesecurity_fields_to_show: ['IsCompromised','DataProtectionEnabled','BlockLevelEncryption','FileLevelEncryption','IsPasscodePresent','IsPasscodeCompliant','PasscodeLockGracePeriod','PasscodeLockGracePeriodEnforced']
+possible_deviceenrolleddevicescount_to_show: ['DevicesCount']
+possible_deviceuser_fields_to_show: ['Id','UserName','Status','Email','SecurityType', 'ContactNumber','MessageType','EmailUserName','Group', 'OrganizationGroupUuid','Role','EnrolledDevicesCount','ExternalId']
+possible_deviceprofiles_fields_to_show: ['Id','Status','Name','Description','LocationGroupId','CurrentVersion','AssignmentType']
+possible_devicenetwork_fields_to_show: ['PhoneNumber','RoamingStatus','DataRoamingEnabled','VoiceRoamingEnabled','IPAddress','CellularNetworkInfo','WifiInfo']
+possible_systemrole_fields_to_show: ['Id','Name','Description','LocationGroup','LocationGroupId','IsActive','UserLinkId']
+possible_deviceadminapp_fields_to_show: ['Identifier','Name','Version']
+possible_devicebulksettings_fields_to_show: ['SendMessage','EnterpriseWipe','GPS','LockDevice']
+possible_devicecertificate_fields_to_show: ['FirstSampleTime','LastSampleTime','DeviceId','Name','ExpiresOn','IssuedBy','Status','Id']
+possible_devicenotes_fields_to_show: ['Id','DeviceId','TagId','Note','CreatedOn','ModifiedOn']
+possible_deviceextensive_fields_to_show: ['DeviceId','DeviceUuid','Udid','SerialNumber','DeviceFriendlyName','OrganizationGroupId','OrganizationGroupUuid','UserName','LastSeen','EnrollmentDate','Compliant','AssetNumber','EnrollmentStatus','UnEnrolledDate','DeviceNetworkInfo','Products','SmartGroups','CustomAttributes']
+#Below same as above :/
+possible_devicelite_fields_to_show: ['DeviceId','DeviceUuid','Udid','DeviceFriendlyName','OrganizationGroupId','OrganizationGroupUuid','LastSeen', 'DeviceNetworkInfo''CustomAttributes']
+possible_devicesecurityinfos_fields_to_show: ['DeviceId','CompromisedStatus','EncryptionStatus','PasscodeStatus','PasscodeComplianceStatus','PasscodeLockGracePeriod','PasscodeLockGracePeriodEnforced']
+possible_devicenetworkinfos_fields_to_show: ['Id','IPAddress']
+possible_devicecompliancepolicy_fields_to_show: ['AssignedDevices','CompliantDevices','Description','DevicePolicyId','IsActive','Name','NonCompliantDevices','Platform','RootLocationGroupId','RootLocationGroupName']
+possible_devicecustoattr_fields_to_show: ['DeviceId','Udid','SerialNumber','EnrollmentUserName','AssetNumber','CustomAttributes']
+possible_devicecustoattrchange_fields_to_show: ['DeviceID','FriendlyName','CustomAttributesChanges']
+possible_systemusersenrolleddevice_fields_to_show: ['DeviceID','SerialNumber','AssetNumber','FriendlyName','UserName','EnrolledDate','RegistrationDate','LastSeen','Platform','CustomAttributes']
+possible_mdmproductfailed_fields_to_show: ['DeviceId','Name','LastJobStatus']
+possible_mdmproductassigned_fields_to_show: ['DeviceId','Name','LastJobStatus','LastSeen']
+
+
+
