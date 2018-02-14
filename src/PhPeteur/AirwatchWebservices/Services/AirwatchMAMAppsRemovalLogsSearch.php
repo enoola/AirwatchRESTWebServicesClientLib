@@ -8,7 +8,12 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Search and Retrieve Removal Logs for Internal Applications
+ * Functionality – Searches and retrieves removal logs for internal applications.
+If the number of remove application commands queued in a set time interval exceeds the configured threshold, the
+commands are put in locked state. This API method returns the details of the commands that are put in locked state.
+ */
 class AirwatchMAMAppsRemovalLogsSearch extends AirwatchServicesSearch
 {
     const URI_MAM_APPS_REMOVALLOGS_SEARCH = AirwatchMAMApps::URI_MAM_APPS . '/removallogs';

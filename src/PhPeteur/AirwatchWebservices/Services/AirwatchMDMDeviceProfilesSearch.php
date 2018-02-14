@@ -9,6 +9,10 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
+/*
+ * Retrieve Profile Details of the Device
+ * Functionality – Retrieves the profile related information of the device.
+ */
 class AirwatchMDMDeviceProfilesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_PROFILES_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/profiles';

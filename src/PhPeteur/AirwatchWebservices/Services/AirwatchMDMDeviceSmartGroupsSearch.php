@@ -9,7 +9,10 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
-
+/*
+ * Retrieve Device Associated Smart Groups
+ * Functionality – Retrieves all the smart groups associated with the device.
+ */
 class AirwatchMDMDeviceSmartGroupsSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_SMARTGROUPS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES;

@@ -9,6 +9,10 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
+/*
+ * Retrieve Smart Group details
+ * Functionality – Retrieves the smart group details created in an organization group.
+ */
 class AirwatchMDMSmartGroupSearch extends AirwatchServicesSearch
 {
     const URI_MDM_SMARTGROUP_SEARCH = AirwatchMDMSmartGroups::URI_MDM_SMARTGROUPS;
