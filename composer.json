@@ -1,4 +1,5 @@
 {
+    "name":"enoola/airwatchrestwebservicesclientphplib",
     "require": {
         "guzzlehttp/guzzle": "^6.3",
         "symfony/finder": "^4.0",
