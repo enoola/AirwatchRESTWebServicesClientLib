@@ -138,18 +138,35 @@ class Airwatch
         } catch (\GuzzleHttp\Exception\ClientException $e) {
 
             //we want to display a nice error to the user..
-            //error are composed of an error code, message, and an activityId for support(lol)
-            //print_r($e->getResponse());
+            //NOT SURE THIS IS THE RIGHT WAY We might need a special class to throw the exception
+            // and catch it on the caller side
             $err_decomposed = json_decode($e->getResponse()->getBody(), true);
+            if ($e->getResponse()->getStatusCode() == 400)
+            {
+                $resp = array();
+                $resp['uri'] = $path;
+                $resp['statuscode'] = $e->getResponse()->getStatusCode();
+                $resp['message'] = $err_decomposed['Message'];
+                $resp['activityId'] = $err_decomposed['ActivityId'];
+
+                //$resp['data'] = null;
+                return ( $resp );
+            }
+
+            echo PHP_EOL.'==========='.PHP_EOL;
+            var_dump($e->getResponse());
+            echo PHP_EOL.'==========='.PHP_EOL;
             //var_dump($err_decomposed);
             echo "Client side exception.".PHP_EOL;
-            var_dump($e->getResponse());
-            exit;
-
-            echo 'code : '.$err_decomposed['errorCode'].PHP_EOL;
-
-            echo 'message: '.$err_decomposed['message'].PHP_EOL;
-            echo 'activityId : '.$err_decomposed['activityId'].PHP_EOL;
+            /*
+            echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
+            echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
+            echo 'activityId : '.$e->getResponse()->getBody().PHP_EOL;
+            */
+            echo 'code : '.$err_decomposed['ErrorCode'].PHP_EOL;
+            echo 'message: '.$err_decomposed['Message'].PHP_EOL;
+            echo 'activityId : '.$err_decomposed['ActivityId'].PHP_EOL;
+            
             exit;
 
         } catch (\GuzzleHttp\Exception\ServerException $e) {
