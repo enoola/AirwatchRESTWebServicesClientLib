@@ -16,7 +16,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMAMAppsGroupSearch extends AirwatchServicesSearch
 {
     const URI_MAM_APPSGROUP_SEARCH = AirwatchMAMApps::URI_MAM_APPS . '/appgroups';
-
+    const CLASS_SENTENCE_AIM = 'Searches for products using the query information provided.';
 
     public function __construct($cfg)
     {
