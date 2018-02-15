@@ -166,7 +166,7 @@ class Airwatch
             echo 'code : '.$err_decomposed['ErrorCode'].PHP_EOL;
             echo 'message: '.$err_decomposed['Message'].PHP_EOL;
             echo 'activityId : '.$err_decomposed['ActivityId'].PHP_EOL;
-            
+
             exit;
 
         } catch (\GuzzleHttp\Exception\ServerException $e) {
