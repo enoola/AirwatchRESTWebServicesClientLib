@@ -16,7 +16,8 @@ class AirwatchMDMDevicesSecurityInformationsSearch extends AirwatchServicesSearc
 {
 
     const URI_MDM_DEVICES_SECURITYINFOS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/securityinfosearch';
-
+    const CLASS_SENTENCE_AIM = 'Searches for device security information.';
+    
     public function __construct( $cfg )
     {
         $arPossibleParams = [

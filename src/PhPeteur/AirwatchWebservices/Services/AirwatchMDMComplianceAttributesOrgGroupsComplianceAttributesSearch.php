@@ -9,10 +9,14 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
+/*
+ * Retrieve Compliance Attributes
+ * Functionality – Gets the list compliance attributes configured for an organizational group based on the vendor name.
+ */
 class AirwatchMDMComplianceAttributesOrgGroupsComplianceAttributesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_COMPLIANCEATTRIBUTES_OGCOMPLIANCEATTR_SEARCH = AirwatchMDMComplianceAttributes::URI_MDM_COMPLIANCEATTRIBUTES. '/organizationgroupcomplianceattributes' ;
-
+    const CLASS_SENTENCE_AIM = 'Gets the list compliance attributes configured for an organizational group based on the vendor name.';
 
     public function __construct($cfg)
     {

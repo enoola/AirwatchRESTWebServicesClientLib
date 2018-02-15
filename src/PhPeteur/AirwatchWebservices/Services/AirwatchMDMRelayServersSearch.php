@@ -8,11 +8,14 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Retrieve Relay Server Details
+ * Functionality – Retrieves the details of the existing relay server.
+ */
 class AirwatchMDMRelayServersSearch extends AirwatchServicesSearch
 {
     const URI_MDM_RELAYSERVERS_SEARCH = 'api/mdm/relayservers';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the details of the existing relay server.';
 
     public function __construct($cfg)
     {

@@ -15,6 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceCertificatesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_CERTIFICATES_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/certificates';
+    const CLASS_SENTENCE_AIM = 'Retrieves the details of the certificates that are present on the device.';
 
     public function __construct($cfg)
     {

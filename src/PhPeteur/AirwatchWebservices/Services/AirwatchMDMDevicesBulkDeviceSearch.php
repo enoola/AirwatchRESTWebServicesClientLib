@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDevicesBulkDeviceSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_BULKDEVICE_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES  ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves information about multiple devices identified by the specified Id type.';
 
     public function __construct($cfg)
     {

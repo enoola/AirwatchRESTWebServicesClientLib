@@ -8,12 +8,14 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Retrieve Device Information
+ * Functionality – Retrieves details of the device identified by device ID.
+ */
 class AirwatchMDMDeviceInformationsSearch extends AirwatchServicesSearch
 {
-
     const URI_MDM_DEVICE_INFOS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves details of the device identified by device ID.';
 
     public function __construct($cfg)
     {

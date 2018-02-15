@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchSystemGroupsSearch  extends AirwatchServicesSearch
 {
     const URI_SYSTEM_GROUP_SEARCH = AirwatchSystemGroups::URI_SYSTEM_GROUPS . '/search';
-
+    const CLASS_SENTENCE_AIM = 'Searches for Organization Group Details based on the parameters provided in the URL.';
 
     public function __construct($cfg)
     {

@@ -8,11 +8,15 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Search Enrolled Device
+ * Functionality – Retrieves enrolled device details for the query information provided in the request.
+ */
 class AirwatchSystemUsersEnrolledDevicesSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEMUSERS_ENROLLEDDEVICES_SEARCH = AirwatchSystemUsers::URI_SYSTEM_USERS . '/enrolleddevices/search' ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves enrolled device details for the query information provided in the request.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['organizationgroupid' => 'String OG id to sick in',

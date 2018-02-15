@@ -16,6 +16,7 @@ class AirwatchSystemUserSearch extends AirwatchServicesSearch
 {
 
     const URI_MDM_SYSTEMUSER_SEARCH = AirwatchSystemUsers::URI_SYSTEM_USERS ;
+    const CLASS_SENTENCE_AIM = 'Retrieves enrollment user\'s details identified by the enrollment user Id.';
 
     public function __construct($cfg)
     {

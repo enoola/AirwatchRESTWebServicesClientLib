@@ -10,11 +10,12 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 
 /*
- * MAM apps is so huge we will split it so here is the main entry point, and it will have a lot of children
+ * MAM apps is so huge we will split it so here is the main entry point
  */
 class AirwatchMAMApps extends Airwatch
 {
     const URI_MAM_APPS = 'api/mam/apps';
+    const CLASS_SENTENCE_AIM = 'A wrapper class for the URI';
     //possibleQueryParams
 
     public function __construct($cfg)

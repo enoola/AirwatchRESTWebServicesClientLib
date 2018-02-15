@@ -15,7 +15,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceNetworkSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_NETWORK_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/network';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the network information of the device.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['id' => 'Device alternate id',

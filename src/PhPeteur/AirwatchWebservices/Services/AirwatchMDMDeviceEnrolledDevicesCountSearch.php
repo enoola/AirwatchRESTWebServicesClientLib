@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceEnrolledDevicesCountSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_ENROLLEDDEVICESCOUNT_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/enrolleddevicescount' ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves count of all enrolled devices based on any or all of the OG ids, tag names, and devices';
 
     public function __construct($cfg)
     {

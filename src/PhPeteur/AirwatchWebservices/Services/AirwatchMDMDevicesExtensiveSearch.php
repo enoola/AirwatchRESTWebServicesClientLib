@@ -21,7 +21,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDevicesExtensiveSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICESEXTENSIVE_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/extensivesearch';
-
+    const CLASS_SENTENCE_AIM = 'Search results containing the devices and their product assignment information.';
+    
     public function __construct( $cfg )
     {
 

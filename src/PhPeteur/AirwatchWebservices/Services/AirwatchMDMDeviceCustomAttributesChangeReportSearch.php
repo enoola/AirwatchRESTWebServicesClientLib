@@ -15,7 +15,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceCustomAttributesChangeReportSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_CUSTOMATTRIBUTES_CHANGEREPORT_SEARCH = AirwatchMDMDeviceCustomAttributes::URI_MDM_DEVICE_CUSTOMATTRIBUTES.'/changereport' ;
-
+    const CLASS_SENTENCE_AIM = 'Searches for changes made to device custom attributes.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = [

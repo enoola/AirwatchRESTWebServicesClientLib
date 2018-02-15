@@ -9,10 +9,16 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
+/*
+ * Search Applications
+ * Functionality – Searches and retrieves the details for both internal and external applications.
+ */
 class AirwatchMAMAppsSearch extends AirwatchServicesSearch
 {
 
     const URI_MAM_APPS_SEARCH = AirwatchMAMApps::URI_MAM_APPS . '/search';
+    const CLASS_SENTENCE_AIM = 'Searches and retrieves the details for both internal and external applications.';
+    
     //possibleQueryParams for a search in apps
     protected $_arPossibleParams;
     /*

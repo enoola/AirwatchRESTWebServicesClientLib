@@ -15,6 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchSystemInfo extends Airwatch
 {
     const URI_SYSTEMINFO = '/api/system/info';
+    const CLASS_SENTENCE_AIM = 'Retrieves information about AirWatch version and API URLs.';
 
     function getInfos(){
         $response = $this->query(self::URI_SYSTEMINFO);

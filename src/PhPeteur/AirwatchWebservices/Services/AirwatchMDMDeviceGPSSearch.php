@@ -8,11 +8,14 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Retrieve GPS Co-ordinates of the Device
+ * Functionality – Retrieves the GPS co-ordinates of the device.
+ */
 class AirwatchMDMDeviceGPSSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_GPS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/gps' ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the GPS co-ordinates of the device.';
 
     public function __construct($cfg)
     {

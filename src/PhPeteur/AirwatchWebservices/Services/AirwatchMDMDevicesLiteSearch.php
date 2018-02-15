@@ -15,7 +15,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDevicesLiteSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICESLITE_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/litesearch';
-
+    const CLASS_SENTENCE_AIM = 'Search results containing the devices and their product assignment information (Lite Version).';
+    
     public function __construct( $cfg )
     {
         $arPossibleParams = [

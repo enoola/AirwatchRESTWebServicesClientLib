@@ -13,6 +13,7 @@ class AirwatchMDMProductsSearch extends AirwatchServicesSearch
 {
     const URI_MDM_PRODUCTS_SEARCH = AirwatchMDMProducts::URI_MDM_PRODUCTS . '/search';
 
+    
     public function __construct($cfg)
     {
 

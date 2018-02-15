@@ -11,12 +11,12 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 /*
  * Retrieve Compliance Details of the Device
+ * Functionality – Retrieves the details of the compliance policies that are present on a device.
  */
 class AirwatchMDMDeviceComplianceDetailsSearch extends AirwatchServicesSearch
 {
-
     const URI_MDM_DEVICE_COMPLIANCESTATUS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/compliance' ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the details of the compliance policies that are present on a device.';
 
     public function __construct($cfg)
     {

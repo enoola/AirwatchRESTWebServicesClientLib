@@ -16,7 +16,8 @@ and a forced reprocess.
 class AirwatchMDMProductsReprocessAction extends AirwatchServicesSearch
 {
     const URI_MDM_PRODUCTS_REPROCESS_ACTION = 'api/mdm/products/reprocessProduct'  ;
-
+    const CLASS_SENTENCE_AIM = 'Initiates reprocessing of a product or product and device(s) by the policy engine. Supports a reprocess
+and a forced reprocess.';
 
     public function __construct($cfg)
     {

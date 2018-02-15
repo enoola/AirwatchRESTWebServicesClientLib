@@ -15,7 +15,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchSystemUsersSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEM_USERS_SEARCH = AirwatchSystemUsers::URI_SYSTEM_USERS . '/search';
-
+    const CLASS_SENTENCE_AIM = 'Searches for the enrollment user details.';
+    
     public function __construct( $cfg )
     {
 

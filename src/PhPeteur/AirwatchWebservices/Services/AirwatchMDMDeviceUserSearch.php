@@ -16,7 +16,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceUserSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICES_USER_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/user';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the details of the enrollment user associated to the device.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['id' => 'Device alternate id',

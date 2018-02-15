@@ -15,7 +15,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMCompliancePoliciesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_COMPLIANCEPOLICIES_SEARCH = '/api/mdm/compliancepolicy/search' ;
-
+    const CLASS_SENTENCE_AIM = 'Searches for the compliance policies on OG with the search parameters passed.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['organizationgroupid' => 'Organization group id which is similar to selected organization group selected in console.',

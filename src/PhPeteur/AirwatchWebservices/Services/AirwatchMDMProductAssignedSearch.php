@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMProductAssignedSearch extends AirwatchServicesSearch
 {
     const URI_PRODUCTS_ASSIGNED_SEARCH = '/api/mdm/products';
-
+    const CLASS_SENTENCE_AIM = 'Returns the details of the device for which provisioning is assigned.';
 
     public function __construct($cfg)
     {

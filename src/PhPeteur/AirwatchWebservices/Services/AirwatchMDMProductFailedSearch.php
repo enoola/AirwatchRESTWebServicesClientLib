@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMProductFailedSearch extends AirwatchServicesSearch
 {
     const URI_PRODUCTS_FAILED_SEARCH = '/api/mdm/products';
-
+    const CLASS_SENTENCE_AIM = 'Returns the details of the devices for which Provisioning is Failed.';
 
     public function __construct($cfg)
     {

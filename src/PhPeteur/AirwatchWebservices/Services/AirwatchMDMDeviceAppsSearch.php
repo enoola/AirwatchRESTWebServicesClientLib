@@ -17,7 +17,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceAppsSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICES_APP_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/apps';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the details of the applications that are present on the device.';
 
     public function __construct($cfg)
     {

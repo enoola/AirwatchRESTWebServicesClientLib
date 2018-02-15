@@ -17,6 +17,7 @@ commands are put in locked state. This API method returns the details of the com
 class AirwatchMAMAppsRemovalLogsSearch extends AirwatchServicesSearch
 {
     const URI_MAM_APPS_REMOVALLOGS_SEARCH = AirwatchMAMApps::URI_MAM_APPS . '/removallogs';
+    const CLASS_SENTENCE_AIM = 'Searches and retrieves removal logs for internal applications.';
 
 
     public function __construct($cfg)

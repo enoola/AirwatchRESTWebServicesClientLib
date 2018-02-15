@@ -8,11 +8,15 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Retrieve Notes From the Device
+ * Functionality – Retrieves details of all the notes from the device.
+ */
 class AirwatchMDMDeviceNotesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_NOTES_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/notes';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves details of all the notes from the device.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['id' => 'Device alternate id',

@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDevicesBulkSettingsSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_BULKSETTINGS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/bulksettings'  ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the values for bulk management settings done on the AirWatch Console.';
 
     public function __construct($cfg)
     {

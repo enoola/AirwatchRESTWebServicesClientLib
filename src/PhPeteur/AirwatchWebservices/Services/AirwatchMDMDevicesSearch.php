@@ -8,7 +8,10 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Search Device Details
+ * Functionality – Searches for devices using the query information provided.
+ */
 /*
  * API URI – https://host/api/mdm/devices/search?user={user}&model={model}&platform={platform}&lastseen=
 {lastseen}&ownership={ownership}&Igid={Igid}&compliantstatus={compliantstatus}&seensince={seensince}&page=
@@ -19,6 +22,8 @@ use PhPeteur\AirwatchWebservices\Exception\AirwatchCmdException;
 class AirwatchMDMDevicesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICES_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/search';
+    const CLASS_SENTENCE_AIM = 'Searches for devices using the query information provided.';
+
     //possibleQueryParams for a search in apps
     //private $_arPossibleParams;
 

@@ -15,6 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceAdminAppsSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICES_ADMINAPPS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES;
+    const CLASS_SENTENCE_AIM = 'Retrieves admin applications details for the passed device ID.';
 
 
     public function __construct($cfg)

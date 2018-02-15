@@ -10,6 +10,9 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 
 /*
+ * Search Admin User
+ * Functionality – Searches for admin users using the query information provided.
+ *
  * I don't intend to use Trait, so no multiple inheritance :/
  * AirwatchSystemAdminSearch would need to extends AirwatchServicesSearch and AirwatchSystemAdmin :/
  * so after some 5min though it will inheritate AirwatchServicesSearch which have a lot more value than the
@@ -19,7 +22,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchSystemAdminsSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEM_ADMIN_SEARCH = AirwatchSystemAdmins::URI_SYSTEM_ADMIN . '/search';
-
+    const CLASS_SENTENCE_AIM = 'Searches for admin users using the query information provided.';
+    
     public function __construct($cfg)
     {
 

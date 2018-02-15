@@ -9,11 +9,14 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
-
+/*
+ * Fetch Admin User Details in an Organization Group (*Refactored)
+ * Functionality – Retrieves the details of all the console admin users in an organization group.
+ */
 class AirwatchSystemGroupAdminsSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEM_GROUPADMINS_SEARCH = AirwatchSystemGroups::URI_SYSTEM_GROUPS;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the details of all the console admin users in an organization group.';
 
     public function __construct($cfg)
     {

@@ -8,11 +8,14 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Retrieve Bulk GPS Co-ordinates From the Device
+ * Functionality – Retrieves the GPS co-ordinates of a list of devices.
+ */
 class AirwatchMDMDevicesBulkGPSSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_BULKGPS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/gps/search' ;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the GPS co-ordinates of a list of devices.';
 
     public function __construct($cfg)
     {

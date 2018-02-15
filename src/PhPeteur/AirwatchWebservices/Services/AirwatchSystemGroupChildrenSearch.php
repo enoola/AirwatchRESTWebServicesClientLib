@@ -16,7 +16,8 @@ groups.
 class AirwatchSystemGroupChildrenSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEM_GROUPCHILDREN_SEARCH = AirwatchSystemGroups::URI_SYSTEM_GROUPS;
-
+    const CLASS_SENTENCE_AIM = 'Fetches the details of the given organization group as well as the details of all its child organizations
+groups.';
 
     public function __construct($cfg)
     {

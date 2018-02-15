@@ -16,7 +16,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMSmartGroupSearch extends AirwatchServicesSearch
 {
     const URI_MDM_SMARTGROUP_SEARCH = AirwatchMDMSmartGroups::URI_MDM_SMARTGROUPS;
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the smart group details created in an organization group.';
 
     public function __construct($cfg)
     {

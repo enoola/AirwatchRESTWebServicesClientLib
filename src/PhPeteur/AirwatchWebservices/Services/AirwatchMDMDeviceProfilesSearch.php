@@ -16,7 +16,8 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDeviceProfilesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICE_PROFILES_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/profiles';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the profile related information of the device.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['id' => 'Device alternate id',

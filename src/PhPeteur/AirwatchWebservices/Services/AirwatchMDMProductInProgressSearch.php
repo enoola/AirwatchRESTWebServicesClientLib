@@ -16,7 +16,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMProductInProgressSearch extends AirwatchServicesSearch
 {
     const URI_PRODUCTS_INPROGRESS_SEARCH = '/api/mdm/products';
-
+    const CLASS_SENTENCE_AIM = 'Returns the details of the device for which Provisioning is In-Progress.';
 
     public function __construct($cfg)
     {

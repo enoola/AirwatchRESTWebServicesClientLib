@@ -8,11 +8,16 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
+/*
+ * Retrieve Event Logs From the Device
+ * Functionality – Retrieves the event log details of the device.
+ */
 
 class AirwatchMDMDeviceEventLogSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICES_EVENTLOG_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/eventlog';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the event log details of the device.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['id' => 'Device alternate id',

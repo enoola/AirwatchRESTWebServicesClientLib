@@ -8,11 +8,15 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Retrieve Device Application Status
+ * Functionality – Retrieves the application status for a combination of input elements.
+ */
 class AirwatchMDMDevicesAppStatusSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEVICES_APPSTATUS = AirwatchMDMDevices::URI_MDM_DEVICES . '/appstatus';
-
+    const CLASS_SENTENCE_AIM = 'Retrieves the application status for a combination of input elements.';
+    
     public function __construct($cfg)
     {
         $arPossibleParams = ['id' => 'Device alternate id',

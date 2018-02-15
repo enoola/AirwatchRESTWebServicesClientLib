@@ -16,7 +16,7 @@ class AirwatchMDMDeviceCustomAttributesSearch extends AirwatchServicesSearch
 {
 
     const URI_MDM_DEVICE_CUSTOMATTRIBUTES_SEARCH = AirwatchMDMDeviceCustomAttributes::URI_MDM_DEVICE_CUSTOMATTRIBUTES.'/search' ;
-
+    const CLASS_SENTENCE_AIM = 'Functionality – Searches for device custom attributes.';
 
     public function __construct($cfg)
     {

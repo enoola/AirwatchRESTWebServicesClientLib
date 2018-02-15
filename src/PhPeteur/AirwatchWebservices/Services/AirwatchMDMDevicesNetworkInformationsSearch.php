@@ -16,6 +16,7 @@ class AirwatchMDMDevicesNetworkInformationsSearch extends AirwatchServicesSearch
 {
 
     const URI_MDM_DEVICES_NETWORKINFOS_SEARCH = AirwatchMDMDevices::URI_MDM_DEVICES . '/networkinfosearch';
+    const CLASS_SENTENCE_AIM = 'Returns device network information along with corresponding device ID.';
 
     public function __construct( $cfg )
     {
