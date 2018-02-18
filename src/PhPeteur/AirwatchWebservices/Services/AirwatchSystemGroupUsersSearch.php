@@ -8,11 +8,14 @@
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
-
+/*
+ * Fetch Enrollment Users in an Organization Group (*Refactored)
+ * Functionality – Retrieves the details of all the enrollment users in an organization group.
+ */
 class AirwatchSystemGroupUsersSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEM_GROUPUSERS_SEARCH = AirwatchSystemGroups::URI_SYSTEM_GROUPS;
-
+    const CLASS_SENTENCE_AIM = '';
 
     public function __construct($cfg)
     {
