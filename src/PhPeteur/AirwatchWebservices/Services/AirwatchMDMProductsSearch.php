@@ -9,10 +9,14 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
+/*
+ * Search Product
+ * Functionality – Searches for the products with the search parameters passed.
+ */
 class AirwatchMDMProductsSearch extends AirwatchServicesSearch
 {
     const URI_MDM_PRODUCTS_SEARCH = AirwatchMDMProducts::URI_MDM_PRODUCTS . '/search';
-
+    const CLASS_SENTENCE_AIM = 'Searches for the products with the search parameters passed.';
     
     public function __construct($cfg)
     {
