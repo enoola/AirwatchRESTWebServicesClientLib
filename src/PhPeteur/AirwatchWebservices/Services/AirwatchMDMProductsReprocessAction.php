@@ -40,8 +40,6 @@ and a forced reprocess.';
      */
     public function Action( $arParams = null): array
     {
-        echo PHP_EOL."Warning only one device processing at a time for the moment!!!".PHP_EOL;
-
         if (is_null($arParams) || !array_key_exists('DeviceIds',$arParams) || !array_key_exists('ProductID', $arParams)) {
             die ("wrong Parameters provided 'DeviceIds' & 'ProductID' are mandatory" . PHP_EOL);
             return (null);
@@ -57,7 +55,7 @@ and a forced reprocess.';
         $arPmq['ProductID'] = $arParams['ProductID'];
 
         //var_dump(json_encode($arPmq,JSON_PRETTY_PRINT));
-        
+
         if (!is_null($arParams) && (count($arParams) > 0)) {
             foreach ($arParams as $k => $val) {
                 if (!array_key_exists($k, $this->_arPossibleParams)) {
