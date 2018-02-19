@@ -56,9 +56,8 @@ and a forced reprocess.';
         $arPmq['DeviceIds'] = $arParams['DeviceIds'];
         $arPmq['ProductID'] = $arParams['ProductID'];
 
-        var_dump(json_encode($arPmq,JSON_PRETTY_PRINT));
-
-        //exit;
+        //var_dump(json_encode($arPmq,JSON_PRETTY_PRINT));
+        
         if (!is_null($arParams) && (count($arParams) > 0)) {
             foreach ($arParams as $k => $val) {
                 if (!array_key_exists($k, $this->_arPossibleParams)) {
