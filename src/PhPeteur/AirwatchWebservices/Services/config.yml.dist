@@ -69,6 +69,7 @@ default_devicecustoattrchange_fields_to_show: ['DeviceID','FriendlyName','Custom
 default_systemusersenrolleddevice_fields_to_show: ['DeviceID','SerialNumber','AssetNumber','FriendlyName','UserName','EnrolledDate','RegistrationDate','LastSeen','Platform','CustomAttributes']
 default_mdmproductfailed_fields_to_show: ['DeviceId','Name','LastJobStatus']
 default_mdmproductassigned_fields_to_show: ['DeviceId','Name','LastJobStatus','LastSeen']
+default_mdmproductsearch_fields_to_show: ['ID','PlatformID','Name','ManagedByOrganizationGroupID','Description','ManagedByOrganizationGroupName','Active','Platform','SmartGroups','Manifest','Conditions','TotalAssigned','Compliant','InProgress','Failed','PauseResume','DevicePolicyTypeID','DevicePolicyType','ActivationOrDeactivationType']
 
 ##default_systemgroupchildren: ['Name','Id']
 #below is to ease your life if you wan't to change default fields..
@@ -112,6 +113,6 @@ possible_devicecustoattrchange_fields_to_show: ['DeviceID','FriendlyName','Custo
 possible_systemusersenrolleddevice_fields_to_show: ['DeviceID','SerialNumber','AssetNumber','FriendlyName','UserName','EnrolledDate','RegistrationDate','LastSeen','Platform','CustomAttributes']
 possible_mdmproductfailed_fields_to_show: ['DeviceId','Name','LastJobStatus']
 possible_mdmproductassigned_fields_to_show: ['DeviceId','Name','LastJobStatus','LastSeen']
-
+possible_mdmproductsearch_fields_to_show: ['ID','PlatformID','Name','ManagedByOrganizationGroupID','Description','ManagedByOrganizationGroupName','Active','Platform','SmartGroups','Manifest','Conditions','TotalAssigned','Compliant','InProgress','Failed','PauseResume','DevicePolicyTypeID','DevicePolicyType','ActivationOrDeactivationType']
 
 

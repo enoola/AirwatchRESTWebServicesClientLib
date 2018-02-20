@@ -62,7 +62,7 @@ abstract class AirwatchServicesSearch extends Airwatch
             }
             $this->addParamsToQuery($arParams);
         }
-
+        echo ">>>".$this->_uri;
         $res = $this->query($this->_uri);
 
         return ($res);
