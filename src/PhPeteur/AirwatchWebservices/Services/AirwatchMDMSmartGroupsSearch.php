@@ -33,7 +33,7 @@ class AirwatchMDMSmartGroupsSearch extends AirwatchServicesSearch
         $this->_uri = self::URI_MDM_SMARTGROUPS_SEARCH;
     }
 
-    /*
+/*
     public function Search($arParams = null) : array
     {
         if (! is_null($arParams)) {
@@ -51,6 +51,7 @@ class AirwatchMDMSmartGroupsSearch extends AirwatchServicesSearch
     }
 
 
+    /*
     public function getPossibleParams()
     {
         return ($this->_arPossibleParams);

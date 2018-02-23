@@ -14,7 +14,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 class AirwatchMDMSmartGroups extends Airwatch
 {
-    const URI_MDM_SMARTGROUPS = 'api/mdm/smartgroups';
+    const URI_MDM_SMARTGROUPS = '/api/mdm/smartgroups';
 
     public function __construct($cfg)
     {

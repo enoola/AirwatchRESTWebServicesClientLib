@@ -60,6 +60,7 @@ class Airwatch
 
     public function query($path)
     {
+        echo "path URI: ".$path;
         try {
             $response = $this->client->request('GET', $path, $this->httpheaders);
             $statusCode = $response->getStatusCode();
@@ -101,7 +102,8 @@ class Airwatch
 
             echo "Server exception\r\n";
             echo "Request Header :\r\n";
-            //var_dump($e->getRequest()->getHeaders());
+            var_dump($e->getRequest()->getHeaders());
+
             echo "e->Request->getRequest()->getBody():\r\n";
             echo $e->getRequest()->getBody();
             echo "\r\n";
