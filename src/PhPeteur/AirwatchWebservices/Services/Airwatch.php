@@ -60,7 +60,7 @@ class Airwatch
 
     public function query($path)
     {
-        echo "path URI: ".$path;
+       // echo "path URI: ".$path;
         try {
             $response = $this->client->request('GET', $path, $this->httpheaders);
             $statusCode = $response->getStatusCode();
