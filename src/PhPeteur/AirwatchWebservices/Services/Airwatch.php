@@ -220,11 +220,14 @@ class Airwatch
             {
                 $resp = array();
                 $resp['uri'] = $path;
+                //echo '....';
+                //change statuscode to status
+                //$resp['statuscode'] = $e->getResponse()->getStatusCode();
                 $resp['statuscode'] = $e->getResponse()->getStatusCode();
                 //print_r($err_decomposed);
                 $resp['message'] = $err_decomposed['message'];
                 $resp['activityId'] = $err_decomposed['activityId'];
-
+                //print_r($resp);
                 //$resp['data'] = null;
                 return ( $resp );
             }
