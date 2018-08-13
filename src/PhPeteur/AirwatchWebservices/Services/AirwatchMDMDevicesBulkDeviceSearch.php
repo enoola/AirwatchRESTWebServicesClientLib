@@ -51,10 +51,10 @@ class AirwatchMDMDevicesBulkDeviceSearch extends AirwatchServicesSearch
                     break;
                 case "Serialnumber" :
                     break;
-                case "EasId" :
+                case "Imeinumber" :
                     break;
                 default :
-                    die ("searchby should be 'Macaddress', 'Udid','Serialnumber', or 'ImeiNumber' .");
+                    die ("searchby should be 'Macaddress', 'Udid','Serialnumber', or 'Imeinumber' .");
 
             }
 

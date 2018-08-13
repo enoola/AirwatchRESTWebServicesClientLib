@@ -165,19 +165,19 @@ class Airwatch
                 return ( $resp );
             }
 
-            echo PHP_EOL.'==========='.PHP_EOL;
-            var_dump($e->getResponse());
-            echo PHP_EOL.'==========='.PHP_EOL;
+//            echo PHP_EOL.'==========='.PHP_EOL;
+//            var_dump($err_decomposed);
+//            echo PHP_EOL.'==========='.PHP_EOL;
             //var_dump($err_decomposed);
-            echo "Client side exception.".PHP_EOL;
+//            echo "Client side exception.".PHP_EOL;
             /*
             echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
             echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
             echo 'activityId : '.$e->getResponse()->getBody().PHP_EOL;
             */
-            echo 'code : '.$err_decomposed['ErrorCode'].PHP_EOL;
-            echo 'message: '.$err_decomposed['Message'].PHP_EOL;
-            echo 'activityId : '.$err_decomposed['ActivityId'].PHP_EOL;
+            echo 'code : '.$err_decomposed['errorCode'].PHP_EOL;
+            echo 'message: '.$err_decomposed['message'].PHP_EOL;
+            echo 'activityId : '.$err_decomposed['activityId'].PHP_EOL;
 
             exit;
 
