@@ -53,19 +53,38 @@ abstract class AirwatchServicesChange extends Airwatch
 
     }
 
-    public function Change( $arParams = null): array
+    /*
+     * @arParam to add to query (by default in headers)
+     * @bParamToBePutInBody above params will be in body's request
+     *
+     * /!\ need to refactor !
+     */
+    public function Change( $arParams = null, $bParamToBePutInBody = false): array
     {
+
         if (!is_null($arParams)) {
             foreach ($arParams as $k => $val) {
                 if (!array_key_exists($k, $this->_arPossibleParams)) {
                     die ("wrong Parameters provided '" . $k . "' isn not accepted as a parameter" . PHP_EOL);
                 }
             }
-            $this->addParamsToQuery($arParams);
+//            die ('here');
+            //param will be put in header not body
+            if ( $bParamToBePutInBody == false )
+                $this->addParamsToQuery($arParams);
         }
 
-        $res = $this->query_post($this->_uri);
 
+        if (($bParamToBePutInBody == false)) {
+            $res = $this->query_post($this->_uri);
+        } //param will be put in body
+        else if ($arParams != null ) {
+            $res = $this->query_post($this->_uri, $arParams);
+        }
+        else {
+            $res = $this->query_post($this->_uri);
+        }
+        var_dump($res);
         return ($res);
     }
 

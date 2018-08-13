@@ -31,7 +31,7 @@ class AirwatchSystemUserChangeOG extends AirwatchServicesChange
     }
 
 
-    public function Change( $arParams = null): array
+    public function Change( $arParams = null, $bParamToBePutInBody = false ): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);
@@ -50,7 +50,7 @@ class AirwatchSystemUserChangeOG extends AirwatchServicesChange
         $this->_uri = self::URI_MDM_SYSTEMUSER_CHANGE_OG.'/'.$id .'/changelocationgroup';//?targetLG='. $lgid ;
         //echo "[".$this->_uri."]";
         //exit;
-        $resquery = parent::Change($arParams);
+        $resquery = parent::Change($arParams, true);
 
         return ($resquery);
     }

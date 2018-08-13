@@ -72,7 +72,9 @@ class Airwatch
                 @json_decode($response->getBody()->getContents(), true),
                 $path
             );
-
+            //echo '--->';
+            //var_dump($resp);
+            //echo '<---';
             //var_dump($resp);
 
             $this->cleanParamsFromQuery();
@@ -119,10 +121,13 @@ class Airwatch
         //$this->httpheaders['headers']['Content-Type']= 'application/json';
         //$this->httpheaders['body'] = json_encode($reqbody);
         $this->httpheaders['json'] = $reqbody;
-
+        //echo 'reqbody';
+        //var_dump($reqbody);
         try {
 
             $response = $this->client->post($path, $this->httpheaders);
+
+            //var_dump($response);
 
             $statusCode = $response->getStatusCode();
             $reasonPhrase = $response->getReasonPhrase();
@@ -133,7 +138,7 @@ class Airwatch
                 @json_decode($response->getBody()->getContents(), true),
                 $path
             );
-
+            // var_dump($resp);
             $this->cleanParamsFromQuery();
 
             return ($resp);
@@ -142,14 +147,19 @@ class Airwatch
             //we want to display a nice error to the user..
             //NOT SURE THIS IS THE RIGHT WAY We might need a special class to throw the exception
             // and catch it on the caller side
+
+            //var_dump($e->getResponse());
+
             $err_decomposed = json_decode($e->getResponse()->getBody(), true);
+            //var_dump($err_decomposed);
+
             if ($e->getResponse()->getStatusCode() == 400)
             {
                 $resp = array();
                 $resp['uri'] = $path;
                 $resp['statuscode'] = $e->getResponse()->getStatusCode();
-                $resp['message'] = $err_decomposed['Message'];
-                $resp['activityId'] = $err_decomposed['ActivityId'];
+                $resp['message'] = $err_decomposed['message'];
+                $resp['activityId'] = $err_decomposed['activityId'];
 
                 //$resp['data'] = null;
                 return ( $resp );
@@ -242,9 +252,15 @@ class Airwatch
             echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
             echo 'activityId : '.$e->getResponse()->getBody().PHP_EOL;
             */
-            echo 'code : '.$err_decomposed['ErrorCode'].PHP_EOL;
-            echo 'message: '.$err_decomposed['Message'].PHP_EOL;
-            echo 'activityId : '.$err_decomposed['ActivityId'].PHP_EOL;
+//            echo 'code : '.$err_decomposed['ErrorCode'].PHP_EOL;
+//            echo 'message: '.$err_decomposed['Message'].PHP_EOL;
+//            echo 'activityId : '.$err_decomposed['ActivityId'].PHP_EOL;
+
+            //echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
+            //echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
+            //echo 'activityId : N/A'.PHP_EOL;
+            $errresp = ['statuscode'=> $e->getResponse()->getStatusCode(),'message'=>$e->getResponse()->getReasonPhrase()];
+            return $errresp;
 
             exit;
 

@@ -10,11 +10,11 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 /*
  * Delete device
- * Functionality – delete the device identified by device ID.
+ * Functionality - Deletes the device information from the AirWatch Console and un-enrolls the device.
  */
-class AirwatchMDMDeviceSecuritySearch extends AirwatchServicesDelete
+class AirwatchMDMDeviceDelete extends AirwatchServicesDelete
 {
-    const URI_MDM_DEVICES_DELETE = AirwatchMDMDevices::URI_MDM_DEVICES . '/delete';
+    const URI_MDM_DEVICE_DELETE = AirwatchMDMDevices::URI_MDM_DEVICES ;
     const CLASS_SENTENCE_AIM = 'Delete the device identified by device ID.';
 
     public function __construct($cfg)
@@ -26,7 +26,7 @@ class AirwatchMDMDeviceSecuritySearch extends AirwatchServicesDelete
 
         parent::setFieldnameToPickInDataResultResponse(null);
 
-        $this->_uri = self::URI_MDM_DEVICES_SECURITY_SEARCH;
+        $this->_uri = self::URI_MDM_DEVICE_DELETE;
     }
 
 
@@ -51,11 +51,14 @@ class AirwatchMDMDeviceSecuritySearch extends AirwatchServicesDelete
 
             }
 
-        } else {         //if searchby isn't set it's an search by id : uri : https://host/api/mdm/devices/{id}/apps?searchb....
+        } else {
+
+            //if searchby isn't set it's an search by id : uri : https://host/api/mdm/devices/{id}
             $id = $arParams['id'];
             unset($arParams['id']);
 
-            $this->_uri = self::URI_MDM_DEVICES_DELETE . '/' . $id . '/delete';
+            $this->_uri = self::URI_MDM_DEVICE_DELETE . '/' . $id ;
+
         }
         $resquery = parent::Delete($arParams);
 
