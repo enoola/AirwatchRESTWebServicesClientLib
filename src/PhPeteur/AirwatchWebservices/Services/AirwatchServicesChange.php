@@ -84,7 +84,7 @@ abstract class AirwatchServicesChange extends Airwatch
         else {
             $res = $this->query_post($this->_uri);
         }
-        var_dump($res);
+        //var_dump($res);
         return ($res);
     }
 
