@@ -242,11 +242,12 @@ class Airwatch
                 return ( $resp );
             }
 
-            echo PHP_EOL.'==========='.PHP_EOL;
-            var_dump($e->getResponse());
-            echo PHP_EOL.'==========='.PHP_EOL;
+            //echo PHP_EOL.'==========='.PHP_EOL;
+            //var_dump($e->getResponse());
             //var_dump($err_decomposed);
-            echo "Client side exception.".PHP_EOL;
+            //echo PHP_EOL.'==========='.PHP_EOL;
+            //var_dump($err_decomposed);
+            //echo "Client side exception.".PHP_EOL;
             /*
             echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
             echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
@@ -259,7 +260,8 @@ class Airwatch
             //echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
             //echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
             //echo 'activityId : N/A'.PHP_EOL;
-            $errresp = ['statuscode'=> $e->getResponse()->getStatusCode(),'message'=>$e->getResponse()->getReasonPhrase()];
+            //$errresp = ['statuscode'=> $e->getResponse()->getStatusCode(),'message'=>$e->getResponse()->getReasonPhrase()];
+            $errresp = ['statuscode'=> $e->getResponse()->getStatusCode(),'message'=>$err_decomposed['message']];
             return $errresp;
 
             exit;
