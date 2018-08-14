@@ -175,11 +175,10 @@ class Airwatch
             echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
             echo 'activityId : '.$e->getResponse()->getBody().PHP_EOL;
             */
-            echo 'code : '.$err_decomposed['errorCode'].PHP_EOL;
-            echo 'message: '.$err_decomposed['message'].PHP_EOL;
-            echo 'activityId : '.$err_decomposed['activityId'].PHP_EOL;
-
-            exit;
+            //echo 'code : '.$err_decomposed['errorCode'].PHP_EOL;
+            //echo 'message: '.$err_decomposed['message'].PHP_EOL;
+            //echo 'activityId : '.$err_decomposed['activityId'].PHP_EOL;
+            return ($err_decomposed);
 
         } catch (\GuzzleHttp\Exception\ServerException $e) {
 

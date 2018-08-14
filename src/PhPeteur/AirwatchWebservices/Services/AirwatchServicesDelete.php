@@ -54,8 +54,8 @@ abstract class AirwatchServicesDelete extends Airwatch
 
     public function Delete( $arParams = null): array
     {
-        echo "ar param".PHP_EOL;
-        var_dump($arParams);
+        //echo "ar param".PHP_EOL;
+        //var_dump($arParams);
         if (!is_null($arParams)) {
             foreach ($arParams as $k => $val) {
                 if (!array_key_exists($k, $this->_arPossibleParams)) {
