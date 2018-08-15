@@ -239,11 +239,20 @@ class Airwatch
                 //print_r($resp);
                 //$resp['data'] = null;
                 return ( $resp );
+            } else {
+                $resp['statuscode'] = $e->getResponse()->getStatusCode();
+                //print_r($err_decomposed);
+                $resp['message'] = $e->getResponse()->getReasonPhrase();
+
             }
 
+            echo '-->'.PHP_EOL;
+            var_dump($e->getResponse()->getReasonPhrase());
+            var_dump($e->getResponse()->getStatusCode());
+            echo '<--'.PHP_EOL;
             //echo PHP_EOL.'==========='.PHP_EOL;
             //var_dump($e->getResponse());
-            //var_dump($err_decomposed);
+
             //echo PHP_EOL.'==========='.PHP_EOL;
             //var_dump($err_decomposed);
             //echo "Client side exception.".PHP_EOL;

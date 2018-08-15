@@ -52,7 +52,7 @@ abstract class AirwatchServicesDelete extends Airwatch
 
     }
 
-    public function Delete( $arParams = null): array
+    public function Delete( $arParams = null, $bParamToBePutInBody = false): array
     {
         //echo "ar param".PHP_EOL;
         //var_dump($arParams);
@@ -62,18 +62,67 @@ abstract class AirwatchServicesDelete extends Airwatch
                     die ("wrong Parameters provided '" . $k . "' isn not accepted as a parameter" . PHP_EOL);
                 }
             }
-            $this->addParamsToQuery($arParams);
+
+
+            if ( $bParamToBePutInBody == false )
+                $this->addParamsToQuery($arParams);
+        }
+
+
+        if (($bParamToBePutInBody == false)) {
+            $res = $this->query_delete($this->_uri);
+        } //param will be put in body
+        else if ($arParams != null ) {
+            $res = $this->query_delete($this->_uri, $arParams);
+        }
+        else {
+            $res = $this->query_delete($this->_uri);
         }
 
         /*
          * echo "DEL QUERY".$this->_uri;
          */
-        $res = $this->query_delete($this->_uri);
+        //$res = $this->query_delete($this->_uri);
 
 
         return ($res);
     }
 
+    public function DeleteWithPost( $arParams = null, $bParamToBePutInBody = false): array
+    {
+        //echo "ar param".PHP_EOL;
+        //var_dump($arParams);
+        if (!is_null($arParams)) {
+            foreach ($arParams as $k => $val) {
+                if (!array_key_exists($k, $this->_arPossibleParams)) {
+                    die ("wrong Parameters provided '" . $k . "' isn not accepted as a parameter" . PHP_EOL);
+                }
+            }
+
+
+            if ( $bParamToBePutInBody == false )
+                $this->addParamsToQuery($arParams);
+        }
+
+
+        if (($bParamToBePutInBody == false)) {
+            $res = $this->query_post($this->_uri);
+        } //param will be put in body
+        else if ($arParams != null ) {
+            $res = $this->query_post($this->_uri, $arParams);
+        }
+        else {
+            $res = $this->query_post($this->_uri);
+        }
+
+        /*
+         * echo "DEL QUERY".$this->_uri;
+         */
+        //$res = $this->query_delete($this->_uri);
+
+
+        return ($res);
+    }
     /*
      * Check the expected fields were provided in config file
      * for the class to run properly

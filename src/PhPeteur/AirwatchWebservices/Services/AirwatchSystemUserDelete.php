@@ -30,7 +30,7 @@ class AirwatchSystemUserDelete extends AirwatchServicesDelete
         $this->_uri = self::URI_SYSTEMUSER_DELETE;
     }
 
-    public function Delete( $arParams = null): array
+    public function Delete( $arParams = null, $bParamToBePutInBody = false): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);

@@ -2,19 +2,19 @@
 /**
  * Created by PhpStorm.
  * User: enola
- * Date: 06/08/2018
- * Time: 12:38
+ * Date: 15/08/2018
+ * Time: 11:27
  */
 
 namespace PhPeteur\AirwatchWebservices\Services;
 
 /*
- * Delete device
- * Functionality - Deletes the device information from the AirWatch Console and un-enrolls the device.
+ * Delete devices in bulk
+ * Functionality - Deletes multiple devices identified by device ID or alternate ID.
  */
-class AirwatchMDMDeviceDelete extends AirwatchServicesDelete
+class AirwatchMDMDevicesBulkDelete extends AirwatchServicesDelete
 {
-    const URI_MDM_DEVICE_DELETE = AirwatchMDMDevices::URI_MDM_DEVICES ;
+    const URI_MDM_DEVICE_BULK_DELETE = AirwatchMDMDevices::URI_MDM_DEVICES . '/bulk' ;
     const CLASS_SENTENCE_AIM = 'Delete the device identified by device ID.';
 
     public function __construct($cfg)
@@ -30,7 +30,7 @@ class AirwatchMDMDeviceDelete extends AirwatchServicesDelete
     }
 
 
-    public function Delete( $arParams = null, $bParamToBePutInBody = false): array
+    public function Delete( $arParams = null): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);
