@@ -12,7 +12,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMDMDEPProfilesSearch extends AirwatchServicesSearch
 {
     const URI_MDM_DEP_PROFILES_SEARCH = '/api/mdm/dep/profiles/search';
-    const CLASS_SENTENCE_AIM = 'Retrieves admin applications details for the passed device ID.';
+    const CLASS_SENTENCE_AIM = 'Retrieves DEP Profile for searchText at least.';
 
 
     public function __construct($cfg)
@@ -28,9 +28,9 @@ class AirwatchMDMDEPProfilesSearch extends AirwatchServicesSearch
 
         parent::__construct($cfg,'default_depprofilesearch_fields_to_show','possible_depprofilesearch_fields_to_show', $arPossibleParams);
 
-        parent::setFieldnameToPickInDataResultResponse('DeviceAdminApps');
+        parent::setFieldnameToPickInDataResultResponse('ProfileList');
 
-        $this->_uri = self::URI_MDM_DEVICES_ADMINAPPS_SEARCH ;
+        $this->_uri = self::URI_MDM_DEP_PROFILES_SEARCH ;
     }
 
 
