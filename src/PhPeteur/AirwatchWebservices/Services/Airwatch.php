@@ -89,9 +89,11 @@ class Airwatch
 
             echo "NEED TO IMPROVE AND VERIFY".PHP_EOL;
 
-            echo "to understand rebase ! rather than PULL ! without -f shit.";
+            echo "to understand rebase ! rather than PULL ! without -f shit.".PHP_EOL;
 
-            echo "ça va être la merde";
+            //var_dump($e);
+
+            echo "ça va être la merde".PHP_EOL;
 
             echo "Client side exception.".PHP_EOL;
             echo 'code : '.$e->getResponse()->getStatusCode() .PHP_EOL;
