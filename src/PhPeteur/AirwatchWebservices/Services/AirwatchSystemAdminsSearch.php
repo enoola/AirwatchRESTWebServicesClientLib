@@ -27,7 +27,12 @@ class AirwatchSystemAdminsSearch extends AirwatchServicesSearch
     public function __construct($cfg)
     {
 
-        $arPossibleParams = [ 'name'=> 'Smart Group name',
+        $arPossibleParams = [ 'firstname'=> "admin's first name",
+            'lastname'=> "admin's last name",
+            'email'=> "admin's email",
+            'organizationgroupid'=> "ogid admin is in",
+            'role'=> "admin role",
+            'username'=> "admin's username",
             'page'=>'Page number',
             'pagesize'=>'Records per page',
         ] ;
