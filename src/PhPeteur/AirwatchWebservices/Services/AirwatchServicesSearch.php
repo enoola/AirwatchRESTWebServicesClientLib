@@ -63,8 +63,9 @@ abstract class AirwatchServicesSearch extends Airwatch
             $this->addParamsToQuery($arParams);
         }
 
+        echo $this->_uri . PHP_EOL;
         $res = $this->query($this->_uri);
-
+        //var_dump($res);
         //echo '-Search>'.PHP_EOL;
         //var_dump($res);
         return ($res);

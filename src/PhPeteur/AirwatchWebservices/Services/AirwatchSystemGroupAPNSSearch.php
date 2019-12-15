@@ -43,9 +43,10 @@ class AirwatchSystemGroupAPNSSearch extends AirwatchServicesSearch
 
         $id = $arParams['id'];
         unset($arParams['id']);
-        $this->_uri = self::URI_SYSTEM_APNS_SEARCH .'/'.$id . '/apns/details';
+        $this->_uri = self::URI_SYSTEM_APNS_SEARCH .'/'.$id . '/apns';
 
-        $resquery = parent::Search($arParams);
+        //$resquery = parent::Search($arParams);
+        $resquery = parent::Search( );
 
         return ($resquery);
     }
