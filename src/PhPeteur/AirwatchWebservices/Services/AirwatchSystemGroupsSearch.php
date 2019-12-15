@@ -11,6 +11,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 /*
  * Search Organization Group
  * Searches for Organization Group Details based on the parameters provided in the URL.
+ * this is deprecated
  */
 class AirwatchSystemGroupsSearch  extends AirwatchServicesSearch
 {
