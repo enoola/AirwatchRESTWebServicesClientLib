@@ -27,7 +27,7 @@ class AirwatchSystemGroupAPNSSearch extends AirwatchServicesSearch
             'pagesize'=>'Records per page',
         ] ;
 
-        parent::__construct($cfg,'default_systemapns_fields_to_show','possible_systemapns_fields_to_show', $arPossibleParams);
+        parent::__construct($cfg,'default_systemapnsid_fields_to_show','possible_systemapnsid_fields_to_show', $arPossibleParams);
 
         parent::setFieldnameToPickInDataResultResponse('data');
 
@@ -43,7 +43,7 @@ class AirwatchSystemGroupAPNSSearch extends AirwatchServicesSearch
 
         $id = $arParams['id'];
         unset($arParams['id']);
-        $this->_uri = self::URI_SYSTEM_APNS_SEARCH .'/'.$id . '/apns/details';
+        $this->_uri = self::URI_SYSTEM_APNS_SEARCH .'/'.$id . '/apns';
 
         $resquery = parent::Search($arParams);
 

@@ -83,7 +83,7 @@ class Airwatch
         } catch (\GuzzleHttp\Exception\ClientException $e) {
 
             //we want to display a nice error to the user..
-            //error are composed of an error code, message, and an activityId for support(lol)
+            //error are composed of an error code, message, and an activityId for support
 
             $err_decomposed = json_decode($e->getResponse()->getBody(), true);
 
