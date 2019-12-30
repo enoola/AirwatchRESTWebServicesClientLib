@@ -292,6 +292,102 @@ class Airwatch
     }
 
 
+    /*
+     * put
+     */
+    public function query_put($path, $reqbody = null)
+    {
+        //$this->httpheaders['headers']['Content-Type']= 'application/json';
+        //$this->httpheaders['body'] = json_encode($reqbody);
+        $this->httpheaders['json'] = $reqbody;
+
+        try {
+
+            $response = $this->client->put($path, $this->httpheaders);
+
+            $statusCode = $response->getStatusCode();
+            $reasonPhrase = $response->getReasonPhrase();
+
+            $resp = $this->response(
+                $statusCode,
+                $reasonPhrase,
+                @json_decode($response->getBody()->getContents(), true),
+                $path
+            );
+
+            $this->cleanParamsFromQuery();
+
+            return ($resp);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+
+            //we want to display a nice error to the user..
+            //NOT SURE THIS IS THE RIGHT WAY We might need a special class to throw the exception
+            // and catch it on the caller side
+            $err_decomposed = json_decode($e->getResponse()->getBody(), true);
+            if ($e->getResponse()->getStatusCode() == 400)
+            {
+                $resp = array();
+                $resp['uri'] = $path;
+                //echo '....';
+                //change statuscode to status
+                //$resp['statuscode'] = $e->getResponse()->getStatusCode();
+                $resp['statuscode'] = $e->getResponse()->getStatusCode();
+                //print_r($err_decomposed);
+                $resp['message'] = $err_decomposed['message'];
+                $resp['activityId'] = $err_decomposed['activityId'];
+                //print_r($resp);
+                //$resp['data'] = null;
+                return ( $resp );
+            } else {
+                $resp['statuscode'] = $e->getResponse()->getStatusCode();
+                //print_r($err_decomposed);
+                $resp['message'] = $e->getResponse()->getReasonPhrase();
+
+            }
+
+            echo '-->'.PHP_EOL;
+            var_dump($e->getResponse()->getReasonPhrase());
+            var_dump($e->getResponse()->getStatusCode());
+            echo '<--'.PHP_EOL;
+            //echo PHP_EOL.'==========='.PHP_EOL;
+            //var_dump($e->getResponse());
+
+            //echo PHP_EOL.'==========='.PHP_EOL;
+            //var_dump($err_decomposed);
+            //echo "Client side exception.".PHP_EOL;
+            /*
+            echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
+            echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
+            echo 'activityId : '.$e->getResponse()->getBody().PHP_EOL;
+            */
+//            echo 'code : '.$err_decomposed['ErrorCode'].PHP_EOL;
+//            echo 'message: '.$err_decomposed['Message'].PHP_EOL;
+//            echo 'activityId : '.$err_decomposed['ActivityId'].PHP_EOL;
+
+            //echo 'code : '.$e->getResponse()->getStatusCode().PHP_EOL;
+            //echo 'message: '.$e->getResponse()->getReasonPhrase().PHP_EOL;
+            //echo 'activityId : N/A'.PHP_EOL;
+            //$errresp = ['statuscode'=> $e->getResponse()->getStatusCode(),'message'=>$e->getResponse()->getReasonPhrase()];
+            $errresp = ['statuscode'=> $e->getResponse()->getStatusCode(),'message'=>$err_decomposed['message']];
+            return $errresp;
+
+            exit;
+
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+
+            echo "Server exception\r\n";
+            echo "Request Header :\r\n";
+            var_dump($e->getRequest()->getHeaders());
+            echo "e->Request->getRequest()->getBody():\r\n";
+            echo $e->getRequest()->getBody();
+            echo "\r\n";
+            echo "e->getResponse->getBody()\r\n";
+            echo $e->getResponse()->getBody();
+            die ("server exception\r\n");
+        }
+
+    }
+
     private function activate_middleware_onquery() {
 
         echo '---- TAP FUNCTION -------'.PHP_EOL;
