@@ -48,6 +48,7 @@ class Airwatch
 
         $this->httpheaders['headers']['Host'] = $cfg['instance_fqdn'];
         $this->httpheaders['headers']['Accept'] = 'application/json';
+        //$this->httpheaders['headers']['api_version'] = 2;
         $this->httpheaders['headers']['aw-tenant-code'] = $cfg['aw-tenant-code'];
         $this->httpheaders['apikey'] = $cfg['apikey'];
         $this->httpheaders['auth']= [];
@@ -58,9 +59,15 @@ class Airwatch
         return ;
     }
 
-    public function query($path)
+    public function query($path, $apiversion=1)
     {
-       // echo "path URI: ".$path;
+
+         if ($apiversion == 2) {
+            $this->httpheaders['headers']['Accept'] = 'application/json;version=2';
+            //echo 'v2 will be invoked';
+        }
+
+        //echo "path URI: ".$path;
         try {
             $response = $this->client->request('GET', $path, $this->httpheaders);
             $statusCode = $response->getStatusCode();
@@ -75,7 +82,7 @@ class Airwatch
             //echo '--->';
             //var_dump($resp);
             //echo '<---';
-            //var_dump($resp);
+            //exit;
 
             $this->cleanParamsFromQuery();
 
@@ -90,7 +97,8 @@ class Airwatch
             echo "NEED TO IMPROVE AND VERIFY".PHP_EOL;
 
             echo "to understand rebase ! rather than PULL ! without -f shit.".PHP_EOL;
-
+            var_dump($e->getResponse());
+            exit;
             //var_dump($e);
 
             echo "ça va être la merde".PHP_EOL;

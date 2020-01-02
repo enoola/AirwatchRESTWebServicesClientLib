@@ -23,7 +23,7 @@ groups.';
     {
         $arPossibleParams = [ 'id'=> 'Application Group id'] ;
 
-        parent::__construct($cfg,'default_systemgroup_fields_to_show','possible_systemgroup_fields_to_show', $arPossibleParams);
+        parent::__construct($cfg,'default_systemgroupschildren_fields_to_show','possible_systemgroupschildren_fields_to_show', $arPossibleParams);
 
         parent::setFieldnameToPickInDataResultResponse(null);
 

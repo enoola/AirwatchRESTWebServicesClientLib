@@ -64,13 +64,30 @@ abstract class AirwatchServicesSearch extends Airwatch
         }
 
         echo "Query URL : ". $this->_uri. PHP_EOL;
-        $res = $this->query($this->_uri);
+        $res = $this->query($this->_uri );
         //print_r($res);
         //echo '-Search>'.PHP_EOL;
         //var_dump($res);
+        //exit;
         return ($res);
     }
 
+    public function SearchV2( $arParams = null): array
+    {
+        if (!is_null($arParams)) {
+            foreach ($arParams as $k => $val) {
+                if (!array_key_exists($k, $this->_arPossibleParams)) {
+                    die ("wrong Parameters provided '" . $k . "' isn not accepted as a parameter" . PHP_EOL);
+                }
+            }
+            $this->addParamsToQuery($arParams);
+        }
+
+        echo "Query URL : ". $this->_uri. PHP_EOL;
+        $res = $this->query($this->_uri, 2);
+
+        return ($res);
+    }
     /*
      * Check the expected fields were provided in config file
      * for the class to run properly
