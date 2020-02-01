@@ -11,6 +11,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\RequestOptions;
+use mysql_xdevapi\Exception;
 
 
 class Airwatch
@@ -67,7 +68,7 @@ class Airwatch
             //echo 'v2 will be invoked';
         }
 
-        //echo "path URI: ".$path;
+        echo "path URI: ".$path;
         try {
             $response = $this->client->request('GET', $path, $this->httpheaders);
             $statusCode = $response->getStatusCode();
@@ -94,6 +95,7 @@ class Airwatch
 
             $err_decomposed = json_decode($e->getResponse()->getBody(), true);
 
+            /*
             echo "NEED TO IMPROVE AND VERIFY".PHP_EOL;
 
             echo "to understand rebase ! rather than PULL ! without -f shit.".PHP_EOL;
@@ -108,7 +110,8 @@ class Airwatch
 
             echo 'message: '.$e->getResponse()->getReasonPhrase() .PHP_EOL;
             echo 'activityId : '.$e->getResponse()->getBody()->getContents() .PHP_EOL;
-            exit;
+            */
+            Throw $e;
 
         } catch (\GuzzleHttp\Exception\ServerException $e) {
 

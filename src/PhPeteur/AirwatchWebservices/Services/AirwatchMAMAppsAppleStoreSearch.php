@@ -9,14 +9,15 @@
 namespace PhPeteur\AirwatchWebservices\Services;
 
 
-class AirwatchMAMAppsPlayStoreSearch extends AirwatchMAMApps
+class AirwatchMAMAppsAppleStoreSearch extends AirwatchMAMApps
 {
-    const URI_MAM_APPS_PLAYSTORE_SEARCH = parent::URI_MAM_APPS . '/playstore/search';
+    const URI_MAM_APPS_APPLESTORE_SEARCH = parent::URI_MAM_APPS . '/applestore/search';
+    const CLASS_SENTENCE_AIM = "search in Applestore.";
     //possibleQueryParams for a search in apps
 
     public function Search( $appNameToSearch ){
-        $uri = self::URI_MAM_APPS_PLAYSTORE_SEARCH;
-        
+        $uri = self::URI_MAM_APPS_APPLESTORE_SEARCH;
+
         $this->addParamsToQuery(array('appname' => $appNameToSearch));
         $playstoreAppsFound = $this->query($uri);
 

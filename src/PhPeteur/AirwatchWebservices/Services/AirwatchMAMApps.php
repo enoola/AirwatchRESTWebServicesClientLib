@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: enola
- * Date: 14/01/2018
+ * Date: 01/02/2020
  * Time: 17:13
  */
 
@@ -15,7 +15,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 class AirwatchMAMApps extends Airwatch
 {
     const URI_MAM_APPS = 'api/mam/apps';
-    const CLASS_SENTENCE_AIM = 'A wrapper class for the URI';
+    const CLASS_SENTENCE_AIM = 'search in stores.';
     //possibleQueryParams
 
     public function __construct($cfg)
