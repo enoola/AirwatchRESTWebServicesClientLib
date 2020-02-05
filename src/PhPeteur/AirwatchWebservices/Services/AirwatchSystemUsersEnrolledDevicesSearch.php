@@ -40,21 +40,23 @@ retrieved',
         $this->_uri = self::URI_SYSTEMUSERS_ENROLLEDDEVICES_SEARCH;
     }
 
+/*
+
     public function Search( $arParams = null): array
     {
 
-/*        if (is_null($arParams) || (!array_key_exists('organizationgroupid',$arParams) &&
-                !array_key_exists('organizationgroup',$arParams))) {
-            die ("Wrong Parameters provided at least 'organizationid' or 'organizationgroup' is mandatory" . PHP_EOL);
-            return (null);
-        }
-*/
+        //if (is_null($arParams) || (!array_key_exists('organizationgroupid',$arParams) &&
+        //        !array_key_exists('organizationgroup',$arParams))) {
+        //    die ("Wrong Parameters provided at least 'organizationid' or 'organizationgroup' is mandatory" . PHP_EOL);
+        //    return (null);
+        //}
+
 
         $resquery = parent::Search($arParams);
 
         return ($resquery);
 
     }
-
+*/
 
 }

@@ -35,7 +35,7 @@ class AirwatchMDMDeviceGPSSearch extends AirwatchServicesSearch
         $this->_uri = self::URI_MDM_DEVICE_GPS_SEARCH;
     }
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);
@@ -65,7 +65,7 @@ class AirwatchMDMDeviceGPSSearch extends AirwatchServicesSearch
             $this->_uri = AirwatchMDMDevices::URI_MDM_DEVICES .'/'.$id . '/gps';
         }
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

@@ -31,7 +31,7 @@ groups.';
     }
 
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("Wrong Parameters provided 'id' is mandatory" . PHP_EOL);
@@ -42,7 +42,7 @@ groups.';
         unset($arParams['id']);
         $this->_uri = self::URI_SYSTEM_GROUPCHILDREN_SEARCH.'/'.$id . '/children';
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

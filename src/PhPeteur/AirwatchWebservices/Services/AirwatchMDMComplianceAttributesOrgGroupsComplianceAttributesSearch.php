@@ -32,14 +32,14 @@ class AirwatchMDMComplianceAttributesOrgGroupsComplianceAttributesSearch extends
     }
 
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         if (is_null($arParams) || !array_key_exists('vendorname',$arParams)) {
             die ("wrong Parameters provided 'vendorname' is mandatory" . PHP_EOL);
             return (null);
         }
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

@@ -17,6 +17,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 abstract class AirwatchServicesSearch extends Airwatch
 {
+    const HTTP_DEFAULT_CONTENT_TYPE = 'application/json;version=1';
     protected $_arPossibleParams;
     protected $_arExpectedFieldsInConfigFile;
 
@@ -52,7 +53,7 @@ abstract class AirwatchServicesSearch extends Airwatch
 
     }
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = 'application/json;version=1'): array
     {
         if (!is_null($arParams)) {
             foreach ($arParams as $k => $val) {
@@ -64,7 +65,7 @@ abstract class AirwatchServicesSearch extends Airwatch
         }
 
         echo "Query URL : ". $this->_uri. PHP_EOL;
-        $res = $this->query($this->_uri );
+        $res = $this->query($this->_uri, $szContentType );
 
         //print_r($res);
         //echo '-Search>'.PHP_EOL;
@@ -86,6 +87,26 @@ abstract class AirwatchServicesSearch extends Airwatch
 
         echo "Query URL : ". $this->_uri. PHP_EOL;
         $res = $this->query($this->_uri, 2);
+
+        return ($res);
+    }
+
+    /*
+     * created to play with response content
+     */
+    public function SearchCusto( $arParams = null, $szContentType): array
+    {
+        if (!is_null($arParams)) {
+            foreach ($arParams as $k => $val) {
+                if (!array_key_exists($k, $this->_arPossibleParams)) {
+                    die ("wrong Parameters provided '" . $k . "' isn not accepted as a parameter" . PHP_EOL);
+                }
+            }
+            $this->addParamsToQuery($arParams);
+        }
+
+        echo "Query URL : ". $this->_uri. PHP_EOL;
+        $res = $this->query($this->_uri, $szContentType);
 
         return ($res);
     }

@@ -46,7 +46,7 @@ class AirwatchSystemGroupAPNSUUIdSearch extends AirwatchServicesSearch
         $this->_uri = self::URI_SYSTEM_APNS_SEARCH .'/'.$uuid . '/apns';
 
         //$resquery = parent::Search($arParams);
-        $resquery = parent::SearchV2( );
+        $resquery = parent::SearchV2( [], 'application/json;version=2');
 
         return ($resquery);
     }
