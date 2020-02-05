@@ -65,6 +65,7 @@ abstract class AirwatchServicesSearch extends Airwatch
         }
 
         echo "Query URL : ". $this->_uri. PHP_EOL;
+        echo "Content Type : ". $szContentType.PHP_EOL;
         $res = $this->query($this->_uri, $szContentType );
 
         //print_r($res);

@@ -10,7 +10,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
 
 
 /*
- * Search AD User leveraging scim v2 api
+ * Search AD User leveraging scim v2 user get api
  * Functionality – Searches for ad users using the uuid provided.
  */
 
@@ -21,9 +21,7 @@ class AirwatchSystemScimV2Users extends AirwatchServicesSearch
     
     public function __construct($cfg)
     {
-
-        $arPossibleParams = [ 'uuid'=> "uuid of the user"
-        ] ;
+        $arPossibleParams = [ 'uuid'=> "uuid of the user" ] ;
 
         parent::__construct($cfg,'default_scimv2users_fields_to_show','possible_scimv2users_fields_to_show', $arPossibleParams);
 
@@ -32,19 +30,19 @@ class AirwatchSystemScimV2Users extends AirwatchServicesSearch
         $this->_uri = self::URI_SYSTEM_SCIMV2_USERS;
     }
 
-    public function Search( $arParams = null, $szContentType=null): array
+    public function Search( $arParams = null, $szContentType = 'application/scim+json;version=2'): array
     {
         if (is_null($arParams) || !array_key_exists('uuid',$arParams)) {
-            die ("Wrong Parameters provided 'id' is mandatory" . PHP_EOL);
+            die ("Wrong Parameters provided 'uuid' is mandatory" . PHP_EOL);
             return (null);
         }
 
         $uuid = $arParams['uuid'];
         unset($arParams['uuid']);
-        $this->_uri = self::URI_SYSTEM_SCIMV2_USERS .'/'.$uuid ;
+        $this->_uri = self::URI_SYSTEM_SCIMV2_USERS . '/' . $uuid ;
 
-        $resquery = parent::Search([], 'application/scim+json;version=2');
-        var_dump($resquery);exit;
+        $resquery = parent::Search([], $szContentType);
+
         return ( $resquery );
     }
 
