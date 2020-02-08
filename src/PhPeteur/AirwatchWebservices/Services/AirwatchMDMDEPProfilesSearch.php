@@ -41,8 +41,8 @@ class AirwatchMDMDEPProfilesSearch extends AirwatchServicesSearch
             return (null);
         }
 
-        $id = $arParams['id'];
-        unset($arParams['id']);
+        //$id = $arParams['id'];
+        //unset($arParams['id']);
         $this->_uri = self::URI_MDM_DEP_PROFILES_SEARCH;
 
         $resquery = parent::Search($arParams, $szContentType);
