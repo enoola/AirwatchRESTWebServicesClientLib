@@ -14,7 +14,7 @@ namespace PhPeteur\AirwatchWebservices\Services;
  * Functionality – Searches for ad users using the uuid provided.
  */
 
-class AirwatchSystemScimV2Groups extends AirwatchServicesSearch
+class AirwatchSystemScimV2GroupsSearch extends AirwatchServicesSearch
 {
     const URI_SYSTEM_SCIMV2_GROUPS = AirwatchSystemScimV2::URI_SYSTEM_SCIMV2 . '/Groups';
     const CLASS_SENTENCE_AIM = 'Searches for AD groups with filter.';
