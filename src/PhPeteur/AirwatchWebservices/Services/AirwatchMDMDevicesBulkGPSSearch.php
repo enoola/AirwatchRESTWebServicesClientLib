@@ -34,7 +34,7 @@ class AirwatchMDMDevicesBulkGPSSearch extends AirwatchServicesSearch
         $this->_uri = self::URI_MDM_DEVICE_BULKGPS_SEARCH;
     }
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = self::HTTP_DEFAULT_CONTENT_TYPE ): array
     {
         if (is_null($arParams) || !array_key_exists('ids',$arParams)) {
             die ("wrong Parameters provided 'ids' is mandatory" . PHP_EOL);
@@ -73,7 +73,7 @@ class AirwatchMDMDevicesBulkGPSSearch extends AirwatchServicesSearch
             $this->addParamsToQuery($arParams);
         }
 
-        $resquery = $this->query_post($this->_uri,$arPmq);
+        $resquery = $this->query_post($this->_uri,$arPmq, $szContentType);
 
         return ($resquery);
     }

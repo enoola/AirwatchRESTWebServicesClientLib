@@ -35,7 +35,7 @@ class AirwatchMDMDeviceEnrolledDevicesCountSearch extends AirwatchServicesSearch
         $this->_uri = self::URI_MDM_DEVICE_ENROLLEDDEVICESCOUNT_SEARCH;
     }
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null,  $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
          if ( is_null($arParams) || ( !array_key_exists('id',$arParams)  &&
               !array_key_exists('organizationgroupid',$arParams)) )
@@ -53,7 +53,7 @@ class AirwatchMDMDeviceEnrolledDevicesCountSearch extends AirwatchServicesSearch
             $this->addParamsToQuery($arParams);
         }
 
-        $resquery = $this->query_post($this->_uri,$arParams);
+        $resquery = $this->query_post($this->_uri, $arParams, $szContentType);
 
         return ($resquery);
     }

@@ -29,7 +29,7 @@ class AirwatchSystemGroupUsersSearch extends AirwatchServicesSearch
     }
 
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("Wrong Parameters provided 'id' is mandatory" . PHP_EOL);
@@ -40,7 +40,7 @@ class AirwatchSystemGroupUsersSearch extends AirwatchServicesSearch
         unset($arParams['id']);
         $this->_uri = self::URI_SYSTEM_GROUPUSERS_SEARCH .'/'.$id . '/users';
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

@@ -35,7 +35,7 @@ class AirwatchMDMDeviceInformationsSearch extends AirwatchServicesSearch
     }
 
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null,$szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
             die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);
@@ -67,7 +67,7 @@ class AirwatchMDMDeviceInformationsSearch extends AirwatchServicesSearch
         }
 
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

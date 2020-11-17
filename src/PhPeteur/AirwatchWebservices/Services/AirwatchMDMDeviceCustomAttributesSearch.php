@@ -38,7 +38,7 @@ class AirwatchMDMDeviceCustomAttributesSearch extends AirwatchServicesSearch
     }
 
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         if (is_null($arParams) || (!array_key_exists('deviceid',$arParams) && !array_key_exists('serialnumber',$arParams)) ) {
             die ("Wrong Parameters provided at least 'deviceid' or 'serialnumber' is mandatory" . PHP_EOL);
@@ -46,7 +46,7 @@ class AirwatchMDMDeviceCustomAttributesSearch extends AirwatchServicesSearch
         }
 
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

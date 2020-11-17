@@ -30,24 +30,23 @@ class AirwatchMDMRelayServersSearch extends AirwatchServicesSearch
         exit;
     }
 
-
+/*
     public function Search( $arParams = null): array
     {
-        /*
-         *
-         if (is_null($arParams) || !array_key_exists('id',$arParams)) {
-            die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);
-            return (null);
-        }
 
-        $id = $arParams['id'];
-        unset($arParams['id']);
-        $this->_uri = self::URI_MDM_SMARTGROUP_SEARCH.'/'.$id ;
-        */
+       //  if (is_null($arParams) || !array_key_exists('id',$arParams)) {
+       //     die ("wrong Parameters provided 'id' is mandatory" . PHP_EOL);
+       //     return (null);
+       // }
+
+       // $id = $arParams['id'];
+       // unset($arParams['id']);
+       // $this->_uri = self::URI_MDM_SMARTGROUP_SEARCH.'/'.$id ;
         $resquery = parent::Search($arParams);
 
         return ($resquery);
     }
+*/
 
 
 }

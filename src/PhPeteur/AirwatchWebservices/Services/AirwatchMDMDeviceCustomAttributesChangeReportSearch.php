@@ -36,7 +36,7 @@ class AirwatchMDMDeviceCustomAttributesChangeReportSearch extends AirwatchServic
     }
 
 
-    public function Search( $arParams = null): array
+    public function Search( $arParams = null, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE): array
     {
         /*
         if (is_null($arParams) || (!array_key_exists('deviceid',$arParams) && !array_key_exists('serialnumber',$arParams)) ) {
@@ -45,7 +45,7 @@ class AirwatchMDMDeviceCustomAttributesChangeReportSearch extends AirwatchServic
         }
         */
 
-        $resquery = parent::Search($arParams);
+        $resquery = parent::Search($arParams, $szContentType);
 
         return ($resquery);
     }

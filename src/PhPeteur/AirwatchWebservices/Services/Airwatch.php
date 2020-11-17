@@ -21,6 +21,7 @@ class Airwatch
      * for each class when function with parameter
      * we'll have name, kind, description
      */
+    const HTTP_DEFAULT_CONTENT_TYPE = 'application/json;version=1';
     const PARAM_STRING = 1; //string
     const PARAM_BOOL = 2; //boolean
     const PARAM_INTEGER = 4; //integer
@@ -60,15 +61,16 @@ class Airwatch
         return ;
     }
 
-    public function query($path, $apiversion=1)
+    public function query($path, $szContentType = self::HTTP_DEFAULT_CONTENT_TYPE)
     {
 
-         if ($apiversion == 2) {
-            $this->httpheaders['headers']['Accept'] = 'application/json;version=2';
+        //application/json;version=2
+         if ($szContentType != null) {
+            $this->httpheaders['headers']['Accept'] = $szContentType;
             //echo 'v2 will be invoked';
         }
 
-        echo "path URI: ".$path;
+        //echo "path URI: ".$path;
         try {
             $response = $this->client->request('GET', $path, $this->httpheaders);
             $statusCode = $response->getStatusCode();
@@ -95,7 +97,7 @@ class Airwatch
 
             $err_decomposed = json_decode($e->getResponse()->getBody(), true);
 
-            /*
+
             echo "NEED TO IMPROVE AND VERIFY".PHP_EOL;
 
             echo "to understand rebase ! rather than PULL ! without -f shit.".PHP_EOL;
@@ -110,7 +112,7 @@ class Airwatch
 
             echo 'message: '.$e->getResponse()->getReasonPhrase() .PHP_EOL;
             echo 'activityId : '.$e->getResponse()->getBody()->getContents() .PHP_EOL;
-            */
+
             Throw $e;
 
         } catch (\GuzzleHttp\Exception\ServerException $e) {
@@ -129,9 +131,10 @@ class Airwatch
 
     }
 
-    public function query_post($path, $reqbody = null)
+    public function query_post($path, $reqbody = null,$szContentType = self::HTTP_DEFAULT_CONTENT_TYPE )
     {
         //$this->httpheaders['headers']['Content-Type']= 'application/json';
+        $this->httpheaders['headers']['Content-Type']= $szContentType;
         //$this->httpheaders['body'] = json_encode($reqbody);
         $this->httpheaders['json'] = $reqbody;
         //echo 'reqbody';

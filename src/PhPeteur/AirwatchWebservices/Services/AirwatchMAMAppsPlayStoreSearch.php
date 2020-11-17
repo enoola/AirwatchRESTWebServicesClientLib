@@ -14,11 +14,11 @@ class AirwatchMAMAppsPlayStoreSearch extends AirwatchMAMApps
     const URI_MAM_APPS_PLAYSTORE_SEARCH = parent::URI_MAM_APPS . '/playstore/search';
     //possibleQueryParams for a search in apps
 
-    public function Search( $appNameToSearch ){
+    public function Search( $appNameToSearch, $szContentType = AirwatchServicesSearch::HTTP_DEFAULT_CONTENT_TYPE ){
         $uri = self::URI_MAM_APPS_PLAYSTORE_SEARCH;
         
         $this->addParamsToQuery(array('appname' => $appNameToSearch));
-        $playstoreAppsFound = $this->query($uri);
+        $playstoreAppsFound = $this->query($uri, $szContentType);
 
         return ( $playstoreAppsFound );
     }
