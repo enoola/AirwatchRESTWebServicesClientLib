@@ -50,5 +50,21 @@ class AirwatchSystemGroupAPNSUUIdSearch extends AirwatchServicesSearch
 
         return ($resquery);
     }
+    public function SearchV3( $arParams = null): array
+    {
+        if (is_null($arParams) || !array_key_exists('uuid',$arParams)) {
+            die ("Wrong Parameters provided 'uuid' is mandatory" . PHP_EOL);
+            return (null);
+        }
+
+        $uuid = $arParams['uuid'];
+        unset($arParams['uuid']);
+        $this->_uri = self::URI_SYSTEM_APNS_SEARCH .'/'.$uuid ;
+
+        //$resquery = parent::Search($arParams);
+        $resquery = parent::SearchV2( );
+
+        return ($resquery);
+    }
 
 }
